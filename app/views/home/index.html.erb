@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-5">
+    <small><em><%= @user.university %></small></em>
+    <h1>Welcome, <%= @first_name %></h1>
+
+    <p><strong><%= @user.degree %> in <%= @user.concentration %></strong></p>
+  </div>
+
+  <div class="col-md-7">
+    <%= image_tag @user.image.url(:large) %>
+  </div>
+</div>
