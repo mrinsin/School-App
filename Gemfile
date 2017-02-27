@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'paperclip'
 gem 'omniauth'
+gem 'devise_token_auth'
+gem 'omniauth-oauth2', '1.3.1'
 gem 'omniauth-linkedin'
 
 
