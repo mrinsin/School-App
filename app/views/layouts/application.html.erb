@@ -19,7 +19,7 @@
   <body>
     <div class="container">
 
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
        <div class="container">
            <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -28,11 +28,15 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <%= link_to "School App", root_path, class: 'navbar-brand' %>
            </div>
 
            <div class="collapse navbar-collapse" id="navbar-collapse-1">
                <ul class="nav navbar-nav navbar-right">
+                   <li><%= link_to 'Home', root_path %></li>
+                   <li><%= link_to 'Messages' %></li>
+                   <li><%= link_to 'Contacts' %></li>
+                   <li><%= link_to 'Jobs' %></li>
+                   <li><%= link_to 'Donations' %></li>
                    <% if current_user %>
                        <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>

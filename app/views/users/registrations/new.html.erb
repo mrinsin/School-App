@@ -1,83 +1,134 @@
 <h2>MVP Registration for Students</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', multipart: true }) do |f| %>
+<%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-
-    <div class="field">
-      <%= f.label :first_name %><br />
-      <%= f.text_field :first_name %>
+<div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.email_field :email, class: "form-control" %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :last_name %><br />
-      <%= f.text_field :last_name %>
+<div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :date_of_birth %><br />
-      <%= f.date_select :date_of_birth %>
+<div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :university %><br />
-      <%= f.text_field :university %>
+<div class="form-group">
+    <%= f.label :username, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :username, class: "form-control",autofocus: true %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :graduation_year %><br />
-      <%= f.date_select :graduation_year %>
+<div class="form-group">
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :first_name, class: "form-control",autofocus: true %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :degree %><br />
-      <%= f.text_field :degree %>
+<div class="form-group">
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :last_name, class: "form-control",autofocus: true %>
     </div>
+</div>
 
-    <div class="field">
-      <%= f.label :concentration %><br />
-      <%= f.text_field :concentration %>
+<div class="form-group">
+    <%= f.label :date_of_birth, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.date_select :date_of_birth, class: "form-control" %>
     </div>
+</div>
 
-  <div class="field">
-    <%= f.label :portfolio %><br />
-    <%= f.text_field :portfolio %>
+
+<div class="form-group">
+    <%= f.label :school, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              select
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">University of California, Berkeley</a></li>
+              <li><a href="#">University of California, Davis</a></li>
+              <li><a href="#">University of California, Irvine</a></li>
+              <li><a href="#">University of California, San Diego</a></li>
+              <li><a href="#">University of California, Los Angeles</a></li>
+              <li><a href="#">University of California, Santa Cruz</a></li>
+              <li><a href="#">University of California, Riverside</a></li>
+              <li><a href="#">University of California, Merced</a></li>
+              <li><a href="#">University of California, Santa Barbara</a></li>
+
+            </ul>
+          </div>    </div>
+</div>
+
+
+<div class="form-group">
+    <%= f.label :graduation_year, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.date_select :graduation_year, class: "form-control" %>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <%= f.label :degree, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :degree, class: "form-control",autofocus: true %>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <%= f.label :concentration, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :concentration, class: "form-control",autofocus: true %>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <%= f.label :portfolio, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.text_field :portfolio, class: "form-control",autofocus: true %>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <%= f.label :profile_image, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+        <%= f.file_field :image%>
+    </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <%= f.submit "Sign up", class: "btn btn-primary" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :profile_image %><br />
-    <%= f.file_field :image %>
-  </div>
-  <br>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-
-
-
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+        <%= render "users/shared/links" %>
+    </div>
+</div>
 <% end %>
-
-<%= render "users/shared/links" %>
